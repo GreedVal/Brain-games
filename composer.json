@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "description": "Test project",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "greedval"
+        }
+    ],
+    "require": {}
+}
