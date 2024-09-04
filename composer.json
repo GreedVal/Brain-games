@@ -1,5 +1,8 @@
 {
     "name": "hexlet/code",
+    "bin": [
+                "bin/php-package"
+            ],
     "description": "Test project",
     "type": "project",
     "autoload": {
