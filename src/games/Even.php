@@ -4,18 +4,18 @@ namespace BrainGames\Games\Even;
 
 use BrainGames\Engine;
 
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 100;
+const DESCRIPTION_KEY = 'even';
 
 function getEvenNumberAndResult(): array
 {
-    $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $randomNumber = Engine\getRandomNumber();
+
     $isRandomNumberEven = $randomNumber % 2 === 0;
     $correctAnswer = $isRandomNumberEven ? 'yes' : 'no';
 
     return [
-        'Question' => $randomNumber,
-        'Correct'  => $correctAnswer,
+        'question' => $randomNumber,
+        'correct'  => $correctAnswer,
     ];
 }
 
@@ -24,10 +24,11 @@ function run(): void
     $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) {
+    for ($i = 0; $i < $gameRoundCount; $i++) 
+    {
         $questionsAndAnswers[] = getEvenNumberAndResult();
     }
 
-    $gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $gameRule = Engine\getDescription(DESCRIPTION_KEY);
     Engine\processGame($gameRule, $questionsAndAnswers);
 }
