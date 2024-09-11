@@ -38,6 +38,9 @@ function getDescription(string $key): string
         case 'calc':
             $description = 'What is the result of the expression?';
             break;
+        case 'nod':
+            $description = 'Find the greatest common divisor of given numbers.';
+            break;
         default:
             $description = 'No description game';
             break;
@@ -54,7 +57,7 @@ function processGame(string $gameRule, array $questionsAndAnswers): void
     foreach ($questionsAndAnswers as $qa) 
     {
         $question = $qa['question'];
-        $correctAnswer = $qa['correct'];
+        $correctAnswer = (string) $qa['correct'];
 
         line("Question: %s", $question);
         $answer = prompt("Your answer is ");

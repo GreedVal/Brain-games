@@ -15,7 +15,7 @@ function getCalcNumberAndResult(): array
 
     $result = [];
 
-    $result['question'] = "{$randomNumber1}{$randomSign}{$randomNumber2}";
+    $result['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
 
     switch ($randomSign) 
     {
