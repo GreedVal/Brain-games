@@ -24,8 +24,7 @@ function run(): void
     $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) 
-    {
+    for ($i = 0; $i < $gameRoundCount; $i++) {
         $questionsAndAnswers[] = getEvenNumberAndResult();
     }
 

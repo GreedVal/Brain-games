@@ -2,7 +2,11 @@
   "name": "hexlet/code",
   "bin": [
     "bin/brain-games",
-    "bin/brain-even"
+    "bin/brain-even",
+    "bin/brain-calc",
+    "bin/brain-gcd",
+    "bin/brain-progression",
+    "bin/brain-prime"
   ],
   "description": "Test project",
   "version": "1.0.0",
@@ -12,7 +16,10 @@
       "src/Cli.php",
       "src/Engine.php",
       "src/games/Even.php",
-      "src/games/Calc.php"
+      "src/games/Calc.php",
+      "src/games/Gcd.php",
+      "src/games/Progression.php",
+      "src/games/Prime.php"
     ]
   },
   "authors": [

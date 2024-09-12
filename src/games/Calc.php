@@ -11,14 +11,11 @@ function getCalcNumberAndResult(): array
 {
     $randomNumber1 = Engine\getRandomNumber();
     $randomNumber2 = Engine\getRandomNumber();
-    $randomSign = Engine\getRandomSing(OPERATIN_SIGNS);
-
-    $result = [];
+    $randomSign = Engine\getRandomSign(OPERATIN_SIGNS);
 
     $result['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
 
-    switch ($randomSign) 
-    {
+    switch ($randomSign) {
         case '+':
             $result['correct'] = $randomNumber1 + $randomNumber2;
             break;
@@ -29,7 +26,7 @@ function getCalcNumberAndResult(): array
             $result['correct'] = $randomNumber1 * $randomNumber2;
             break;
         default:
-
+            $result['correct'] = 'No result';
             break;
     }
 
@@ -42,8 +39,7 @@ function run(): void
     $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) 
-    {
+    for ($i = 0; $i < $gameRoundCount; $i++) {
         $questionsAndAnswers[] = getCalcNumberAndResult();
     }
 
