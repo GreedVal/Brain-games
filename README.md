@@ -9,4 +9,4 @@
 Необходимо реализовать набор мини-игр, запускаемых из консоли.
 ### Установка
 Для глобальной установки выполните команду:
-`$ composer global require greedval/hexlet-project-45`
+`$ composer global require greedval/php-project-45`
