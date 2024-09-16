@@ -10,3 +10,22 @@
 ### Установка
 Для глобальной установки выполните команду:
 `$ composer global require greedval/php-project-45`
+
+Запуск игры Brain-even:
+`$ brain-even`
+
+
+Запуск игры Brain-calc:
+`$ brain-cacl`
+
+
+Запуск игры Brain-gcd:
+`$ brain-gcd`
+
+
+Запуск игры Brain-progression:
+`$ brain-progression`
+
+
+Запуск игры Brain-prime:
+`$ brain-prime`
