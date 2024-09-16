@@ -16,7 +16,7 @@
 
 
 Запуск игры Brain-calc:
-`$ brain-cacl`
+`$ brain-calc`
 
 
 Запуск игры Brain-gcd:
