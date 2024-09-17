@@ -18,6 +18,8 @@
 Запуск игры Brain-calc:
 `$ brain-calc`
 
+![Alt text](/scrinshot/calcLoos.png?raw=true "Optional Title")
+
 
 Запуск игры Brain-gcd:
 `$ brain-gcd`
