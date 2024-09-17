@@ -31,8 +31,6 @@ function getProgressionNumberAndResult(): array
 
     $progression[$randomPosition] = '..';
 
-    echo count($progression);
-
     $progressionString = implode(' ', $progression);
 
     $result['question'] = $progressionString;

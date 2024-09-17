@@ -14,20 +14,34 @@
 Запуск игры Brain-even:
 `$ brain-even`
 
+![Alt text](/scrinshot/evenLoos.png?raw=true "Loss")
+
+![Alt text](/scrinshot/evenWin.png?raw=true "Win")
 
 Запуск игры Brain-calc:
 `$ brain-calc`
 
-![Alt text](/scrinshot/calcLoos.png?raw=true "Optional Title")
+![Alt text](/scrinshot/calcLoos.png?raw=true "Loss")
 
+![Alt text](/scrinshot/calcWin.png?raw=true "Win")
 
 Запуск игры Brain-gcd:
 `$ brain-gcd`
 
+![Alt text](/scrinshot/gcdLoos.png?raw=true "Loss")
+
+![Alt text](/scrinshot/gcdWin.png?raw=true "Win")
 
 Запуск игры Brain-progression:
 `$ brain-progression`
 
+![Alt text](/scrinshot/progLoos.png?raw=true "Loss")
+
+![Alt text](/scrinshot/progWin.png?raw=true "Win")
 
 Запуск игры Brain-prime:
 `$ brain-prime`
+
+![Alt text](/scrinshot/primeLoos.png?raw=true "Loss")
+
+![Alt text](/scrinshot/primeWin.png?raw=true "Win")
