@@ -21,14 +21,14 @@ function getProgressionNumberAndResult(): array
 
     $result = [];
     $progression = [];
-    $correctAnswer = 0;
+    $correctAnswer = $randomNumberStart;
 
     for ($i = 1; $i <= MAX_LONG_PROGRESSION; $i++) {
         $number = $randomNumberStart + $randomStep * $i;
 
         $progression[] = $number;
 
-        if ($randomPosition == $i - 1) {
+        if ($randomPosition == $i) {
             $correctAnswer = $number;
         }
     }
