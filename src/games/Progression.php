@@ -26,7 +26,7 @@ function getProgressionNumberAndResult(): array
     for ($i = 1; $i <= MAX_LONG_PROGRESSION; $i++) {
         $number = $randomNumberStart + $randomStep * $i;
 
-        $progression[] = $number;
+        $progression[$i] = $number;
 
         if ($randomPosition == $i) {
             $correctAnswer = $number;
