@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use BrainGames\Engine;
 
-const LONG_PROGRESSION = 15;
+const LONG_PROGRESSION = 14;
 const MIN_LONG_PROGRESSION = 1;
 const STEP_PROGRESSION = 2;
 const DESCRIPTION_KEY = 'progression';
