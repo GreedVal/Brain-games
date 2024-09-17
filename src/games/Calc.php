@@ -13,6 +13,8 @@ function getCalcNumberAndResult(): array
     $randomNumber2 = Engine\getRandomNumber();
     $randomSign = Engine\getRandomSign(OPERATIN_SIGNS);
 
+    $result = [];
+
     $result['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
 
     switch ($randomSign) {

@@ -11,6 +11,8 @@ function getGcdNumberAndResult(): array
     $randomNumber1 = Engine\getRandomNumber();
     $randomNumber2 = Engine\getRandomNumber();
 
+    $result = [];
+
     $result['question'] = "{$randomNumber1} {$randomNumber2}";
 
     while ($randomNumber2 != 0) {
