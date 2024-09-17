@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use BrainGames\Engine;
 
-const LONG_PROGRESSION = 10;
+const MAX_LONG_PROGRESSION = 9;
 const MIN_LONG_PROGRESSION = 0;
 const MIN_STEP_PROGRESSION = 2;
 const MAX_STEP_PROGRESSION = 9;
@@ -16,14 +16,14 @@ function getProgressionNumberAndResult(): array
 
     $randomNumberStart = Engine\getRandomNumber();
 
-    $randomPosition = rand(MIN_LONG_PROGRESSION, LONG_PROGRESSION);
+    $randomPosition = rand(MIN_LONG_PROGRESSION, MAX_LONG_PROGRESSION);
     $randomStep = rand(MIN_STEP_PROGRESSION, MAX_STEP_PROGRESSION);
-    echo $randomPosition;
+
     $result = [];
     $progression = [];
     $correctAnswer = 0;
 
-    for ($i = 1; $i <= LONG_PROGRESSION; $i++) {
+    for ($i = 1; $i <= MAX_LONG_PROGRESSION; $i++) {
         $number = $randomNumberStart + $randomStep * $i;
 
         $progression[] = $number;
