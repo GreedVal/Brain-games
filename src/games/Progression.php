@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use BrainGames\Engine;
 
-const LONG_PROGRESSION = 14;
+const LONG_PROGRESSION = 15;
 const MIN_LONG_PROGRESSION = 1;
 const STEP_PROGRESSION = 2;
 const DESCRIPTION_KEY = 'progression';
@@ -20,6 +20,7 @@ function getProgressionNumberAndResult(): array
     $result = [];
     $progression = [];
     $progression[] = $randomNumber1;
+    $correctAnswer = null;
 
     for ($i = 1; $i < LONG_PROGRESSION; $i++) {
         $number = $progression[$i - 1] + STEP_PROGRESSION;
@@ -27,19 +28,21 @@ function getProgressionNumberAndResult(): array
         $progression[$i] = $number;
 
         if ($randomPosition == $i) {
-            $result['correct'] = $number;
+            $correctAnswer = $number;
         }
     }
 
-    $progression[$randomPosition] = '..';
+    if ($randomPosition < LONG_PROGRESSION) {
+        $progression[$randomPosition] = '..';
+    }
 
     $progressionString = implode(' ', $progression);
 
     $result['question'] = $progressionString;
+    $result['correct'] = $correctAnswer ?? '';
 
-    return  $result;
+    return $result;
 }
-
 
 
 function run(): void
