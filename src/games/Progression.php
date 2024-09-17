@@ -22,7 +22,7 @@ function getProgressionNumberAndResult(): array
     $result = [];
     $progression = [];
     $progression[] = $randomNumber1;
-    $correctAnswer = null;
+    $correctAnswer = 0;
 
     for ($i = 1; $i <= LONG_PROGRESSION; $i++) {
         $number = $progression[$i - 1] + $randomStep;
@@ -41,7 +41,7 @@ function getProgressionNumberAndResult(): array
     $progressionString = implode(' ', $progression);
 
     $result['question'] = $progressionString;
-    $result['correct'] = $correctAnswer ?? '';
+    $result['correct'] = $correctAnswer;
 
     return $result;
 }
