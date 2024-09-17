@@ -16,9 +16,10 @@ function getProgressionNumberAndResult(): array
     $randomNumber1 = Engine\getRandomNumber();
 
     $randomPosition = rand(MIN_LONG_PROGRESSION, LONG_PROGRESSION);
-
-    $progression[] = $randomNumber1;
+    
     $result = [];
+    $progression = [];
+    $progression[] = $randomNumber1;
 
     for ($i = 1; $i < LONG_PROGRESSION; $i++) {
         $number = $progression[$i - 1] + STEP_PROGRESSION;
