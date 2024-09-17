@@ -18,18 +18,18 @@ function getCalcNumberAndResult(): array
     $result['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
 
     switch ($randomSign) {
-    case '+':
-        $result['correct'] = $randomNumber1 + $randomNumber2;
-        break;
-    case '-':
-        $result['correct'] = $randomNumber1 - $randomNumber2;
-        break;
-    case '*':
-        $result['correct'] = $randomNumber1 * $randomNumber2;
-        break;
-    default:
-        $result['correct'] = 'No result';
-        break;
+        case '+':
+            $result['correct'] = $randomNumber1 + $randomNumber2;
+            break;
+        case '-':
+            $result['correct'] = $randomNumber1 - $randomNumber2;
+            break;
+        case '*':
+            $result['correct'] = $randomNumber1 * $randomNumber2;
+            break;
+        default:
+            $result['correct'] = 'No result';
+            break;
     }
 
     return $result;
