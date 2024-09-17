@@ -22,7 +22,7 @@ function getProgressionNumberAndResult(): array
     $progression[] = $randomNumber1;
     $correctAnswer = null;
 
-    for ($i = 1; $i < LONG_PROGRESSION; $i++) {
+    for ($i = 1; $i <= LONG_PROGRESSION; $i++) {
         $number = $progression[$i - 1] + STEP_PROGRESSION;
 
         $progression[$i] = $number;
