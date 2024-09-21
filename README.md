@@ -19,10 +19,15 @@
 `make validate`
 
 Чтобы начать игру введите:
+
 `make brain-cal` — игра на вычисление результатов математических выражений.
+
 `make brain-gcd` — игра на нахождение наибольшего общего делителя двух чисел.
+
 `make brain-progression` — игра на восстановление недостающего элемента в числовой прогрессии.
+
 `make brain-prime` — игра на определение, является ли число простым.
+
 `make brain-even` — игра на определение, является ли число чётным.
 
 Brain-even:
@@ -40,6 +45,7 @@ Brain-gcd:
 Brain-progression:
 
 [![asciicast](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs.svg)](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs)
+
 Brain-prime:
 
 [![asciicast](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv.svg)](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv)
