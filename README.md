@@ -11,28 +11,35 @@
 Для установки:
 `git clone https://github.com/GreedVal/php-project-45.git`
 
-Запуск игры Brain-even:
-`$ brain-even`
+Перейдите в папку с игрой:
+`cd php-project-45`
 
-![Alt text](/scrinshot/evenLoos.png?raw=true "Loss")
+Выполните команды:
+`make install`
+`make validate`
 
-![Alt text](/scrinshot/evenWin.png?raw=true "Win")
+Чтобы начать игру введите:
+`make brain-cal` — игра на вычисление результатов математических выражений.
+`make brain-gcd` — игра на нахождение наибольшего общего делителя двух чисел.
+`make brain-progression` — игра на восстановление недостающего элемента в числовой прогрессии.
+`make brain-prime` — игра на определение, является ли число простым.
+`make brain-even` — игра на определение, является ли число чётным.
 
-Запуск игры Brain-calc:
-`$ brain-calc`
+Brain-even:
+
+[![asciicast](https://asciinema.org/a/rtAvw6qbbLhdDR7ycq1ea8WUc.svg)](https://asciinema.org/a/rtAvw6qbbLhdDR7ycq1ea8WUc)
+
+Brain-calc:
 
 [![asciicast](https://asciinema.org/a/R5wBOPjZt8sOvMsgZ60h1g4kc.svg)](https://asciinema.org/a/R5wBOPjZt8sOvMsgZ60h1g4kc)
 
-Запуск игры Brain-gcd:
-`$ brain-gcd`
+Brain-gcd:
 
+[![asciicast](https://asciinema.org/a/aT8cbDPu1jippzIg59IXOmuln.svg)](https://asciinema.org/a/aT8cbDPu1jippzIg59IXOmuln)
 
-Запуск игры Brain-progression:
-`$ brain-progression`
+Brain-progression:
 
 [![asciicast](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs.svg)](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs)
-
-Запуск игры Brain-prime:
-`$ brain-prime`
+Brain-prime:
 
 [![asciicast](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv.svg)](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv)
