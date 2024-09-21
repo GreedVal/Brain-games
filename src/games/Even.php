@@ -12,8 +12,8 @@ const GAME_ROUNDS = 3;
 
 function getEven($number): string
 {
-    $isRandomNumberEven = $number % 2 === 0;
-    return $isRandomNumberEven ? 'yes' : 'no';
+    $result = $number % 2 === 0;
+    return $result ? 'yes' : 'no';
 }
 
 function run(): void
