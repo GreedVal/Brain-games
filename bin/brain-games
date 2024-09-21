@@ -4,6 +4,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use function BrainGames\Cli\greetUser;
+use function Hexlet\Code\Cli\greetUser;
 
 greetUser();

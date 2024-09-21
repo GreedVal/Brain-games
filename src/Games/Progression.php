@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\Progression;
+namespace Hexlet\Code\Games\Progression;
 
-use BrainGames\Engine;
+use Hexlet\Code\Engine;
 
 const LONG_PROGRESSION = 10;
 const MIN_POSITION = 1;

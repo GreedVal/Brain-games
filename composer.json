@@ -4,7 +4,7 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "BrainGames\\": "src/"
+      "Hexlet\\Code\\": "src/"
     },
     "files": [
       "src/Cli.php",

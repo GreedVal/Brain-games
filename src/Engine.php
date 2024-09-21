@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Engine;
+namespace Hexlet\Code\Engine;
 
-use function BrainGames\Cli\greetUser;
+use function Hexlet\Code\Cli\greetUser;
 use function cli\line;
 use function cli\prompt;
 

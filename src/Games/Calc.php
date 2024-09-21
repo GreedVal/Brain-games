@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\Calc;
+namespace Hexlet\Code\Games\Calc;
 
-use BrainGames\Engine;
+use Hexlet\Code\Engine;
 
 const OPERATORS = ['+', '-', '*'];
 const DESCRIPTION = 'What is the result of the expression?';

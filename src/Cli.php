@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Cli;
+namespace Hexlet\Code\Cli;
 
 use function cli\line;
 use function cli\prompt;

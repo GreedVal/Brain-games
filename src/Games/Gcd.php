@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\Gcd;
+namespace Hexlet\Code\Games\Gcd;
 
-use BrainGames\Engine;
+use Hexlet\Code\Engine;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const GAME_ROUNDS = 3;
