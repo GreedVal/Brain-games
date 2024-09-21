@@ -13,7 +13,7 @@ const GAME_ROUNDS = 3;
 const DESCRIPTION = 'What number is missing in the progression?';
 
 
-function progression(int $step, int $long, int $start): array
+function isProgression(int $step, int $long, int $start): array
 {
     $result = [];
 
@@ -33,7 +33,7 @@ function run(): void
         $randomPosition = rand(MIN_POSITION, MAX_POSITION);
         $randomStep = rand(MIN_STEP, MAX_STEP);
 
-        $progression = progression($randomStep, LONG_PROGRESSION, $randomPosition);
+        $progression = isProgression($randomStep, LONG_PROGRESSION, $randomPosition);
         $correct = $progression[$randomPosition];
 
         $progression[$randomPosition] = '..';

@@ -10,7 +10,7 @@ const MAX_RANDOM_NUMBER = 100;
 const GAME_ROUNDS = 3;
 
 
-function getEven(int $number): string
+function isEven(int $number): string
 {
     $result = $number % 2 === 0;
     return $result ? 'yes' : 'no';
@@ -24,7 +24,7 @@ function run(): void
         $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
         $questionsAndAnswers[$i]['question'] = $randomNumber;
-        $questionsAndAnswers[$i]['correct'] = getEven($randomNumber);
+        $questionsAndAnswers[$i]['correct'] = isEven($randomNumber);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

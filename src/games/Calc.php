@@ -10,7 +10,7 @@ const GAME_ROUNDS = 3;
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-function getCalc(int $number1, int $number2, string $signs): int
+function isCalc(int $number1, int $number2, string $signs): int
 {
 
     $result = 0;
@@ -50,7 +50,7 @@ function run(): void
         $randomSign = getRandomSign(OPERATORS);
 
         $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-        $questionsAndAnswers[$i]['correct'] = getCalc($randomNumber1, $randomNumber2, $randomSign);
+        $questionsAndAnswers[$i]['correct'] = isCalc($randomNumber1, $randomNumber2, $randomSign);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

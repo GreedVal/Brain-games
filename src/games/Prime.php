@@ -9,7 +9,7 @@ const GAME_ROUNDS = 3;
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-function prime(int $number): string
+function isPrime(int $number): string
 {
     if ($number < 2) {
         return 'no';
@@ -32,7 +32,7 @@ function run(): void
         $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
         $questionsAndAnswers[$i]['question'] = $randomNumber;
-        $questionsAndAnswers[$i]['correct'] = prime($randomNumber);
+        $questionsAndAnswers[$i]['correct'] = isPrime($randomNumber);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

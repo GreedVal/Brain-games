@@ -10,7 +10,7 @@ const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
 
-function getGcd(int $number1, int $number2): int
+function isGcd(int $number1, int $number2): int
 {
     while ($number2 != 0) {
         $data = $number2;
@@ -32,7 +32,7 @@ function run(): void
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
         $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomNumber2}";
-        $questionsAndAnswers[$i]['correct'] = getGcd($randomNumber1, $randomNumber2);
+        $questionsAndAnswers[$i]['correct'] = isGcd($randomNumber1, $randomNumber2);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
