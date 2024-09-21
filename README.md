@@ -8,8 +8,8 @@
 ### Описание проекта
 Необходимо реализовать набор мини-игр, запускаемых из консоли.
 ### Установка
-Для глобальной установки выполните команду:
-`$ composer global require greedval/php-project-45`
+Для установки:
+`git clone https://github.com/GreedVal/php-project-45.git`
 
 Запуск игры Brain-even:
 `$ brain-even`
@@ -21,27 +21,18 @@
 Запуск игры Brain-calc:
 `$ brain-calc`
 
-![Alt text](/scrinshot/calcLoos.png?raw=true "Loss")
-
-![Alt text](/scrinshot/calcWin.png?raw=true "Win")
+[![asciicast](https://asciinema.org/a/R5wBOPjZt8sOvMsgZ60h1g4kc.svg)](https://asciinema.org/a/R5wBOPjZt8sOvMsgZ60h1g4kc)
 
 Запуск игры Brain-gcd:
 `$ brain-gcd`
 
-![Alt text](/scrinshot/gcdLoos.png?raw=true "Loss")
-
-![Alt text](/scrinshot/gcdWin.png?raw=true "Win")
 
 Запуск игры Brain-progression:
 `$ brain-progression`
 
-![Alt text](/scrinshot/progLoos.png?raw=true "Loss")
-
-![Alt text](/scrinshot/progWin.png?raw=true "Win")
+[![asciicast](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs.svg)](https://asciinema.org/a/cilo0TO02GDPCQYHFoxTYOeKs)
 
 Запуск игры Brain-prime:
 `$ brain-prime`
 
-![Alt text](/scrinshot/primeLoos.png?raw=true "Loss")
-
-![Alt text](/scrinshot/primeWin.png?raw=true "Win")
+[![asciicast](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv.svg)](https://asciinema.org/a/wjlaIgQzTmN8sxJfVK1BHzmAv)
