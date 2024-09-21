@@ -13,13 +13,14 @@ function isPrime(int $number): string
 {
     if ($number < 2) {
         return 'no';
-    } else {
-        for ($i = 2; $i <= sqrt($number); $i++) {
-            if ($number % $i == 0) {
-                return 'no';
-            }
+    }
+
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i == 0) {
+            return 'no';
         }
     }
+    
     return 'yes';
 }
 
