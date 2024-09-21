@@ -10,7 +10,7 @@ const MAX_RANDOM_NUMBER = 100;
 const GAME_ROUNDS = 3;
 
 
-function getEven($number): string
+function getEven(int $number): string
 {
     $result = $number % 2 === 0;
     return $result ? 'yes' : 'no';
