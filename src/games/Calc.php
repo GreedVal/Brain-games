@@ -4,31 +4,29 @@ namespace BrainGames\Games\Calc;
 
 use BrainGames\Engine;
 
-const OPERATIN_SIGNS = ['+', '-', '*'];
-const DESCRIPTION_KEY = 'calc';
+const OPERATORS = ['+', '-', '*'];
+const DESCRIPTION = 'What is the result of the expression?';
+const GAME_ROUNDS = 3;
+const MIN_RANDOM_NUMBER = 1;
+const MAX_RANDOM_NUMBER = 100;
 
-function getCalcNumberAndResult(): array
+function getCalc(int $number1, int $number2, string $signs): int
 {
-    $randomNumber1 = Engine\getRandomNumber();
-    $randomNumber2 = Engine\getRandomNumber();
-    $randomSign = Engine\getRandomSign(OPERATIN_SIGNS);
 
-    $result = [];
+    $result = 0;
 
-    $result['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-
-    switch ($randomSign) {
+    switch ($signs) {
         case '+':
-            $result['correct'] = $randomNumber1 + $randomNumber2;
+            $result = $number1 + $number2;
             break;
         case '-':
-            $result['correct'] = $randomNumber1 - $randomNumber2;
+            $result = $number1 - $number2;
             break;
         case '*':
-            $result['correct'] = $randomNumber1 * $randomNumber2;
+            $result = $number1 * $number2;
             break;
         default:
-            $result['correct'] = 'No result';
+            $result = 0;
             break;
     }
 
@@ -38,13 +36,16 @@ function getCalcNumberAndResult(): array
 
 function run(): void
 {
-    $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) {
-        $questionsAndAnswers[] = getCalcNumberAndResult();
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+        $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        $randomSign = array_rand(OPERATORS);
+
+        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
+        $questionsAndAnswers[$i]['correct'] = getCalc($randomNumber1, $randomNumber2, $randomSign);
     }
 
-    $gameRule = Engine\getDescription(DESCRIPTION_KEY);
-    Engine\processGame($gameRule, $questionsAndAnswers);
+    Engine\processGame(DESCRIPTION, $questionsAndAnswers);
 }

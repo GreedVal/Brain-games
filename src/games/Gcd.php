@@ -4,39 +4,36 @@ namespace BrainGames\Games\Gcd;
 
 use BrainGames\Engine;
 
-const DESCRIPTION_KEY = 'gcd';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+const GAME_ROUNDS = 3;
+const MIN_RANDOM_NUMBER = 1;
+const MAX_RANDOM_NUMBER = 100;
 
-function getGcdNumberAndResult(): array
+
+function getGcd(int $number1, int $number2): int
 {
-    $randomNumber1 = Engine\getRandomNumber();
-    $randomNumber2 = Engine\getRandomNumber();
-
-    $result = [];
-
-    $result['question'] = "{$randomNumber1} {$randomNumber2}";
-
-    while ($randomNumber2 != 0) {
-        $data = $randomNumber2;
-        $randomNumber2 = $randomNumber1 % $randomNumber2;
-        $randomNumber1 = $data;
+    while ($number2 != 0) {
+        $data = $number2;
+        $number2 = $number1 % $number2;
+        $number1 = $data;
     }
 
-    $result['correct'] = $randomNumber1;
-
-    return $result;
+    return $number1;
 }
 
 
 function run(): void
 {
 
-    $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) {
-        $questionsAndAnswers[] = getGcdNumberAndResult();
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+        $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+
+        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomNumber2}";
+        $questionsAndAnswers[$i]['correct'] = getGcd($randomNumber1, $randomNumber2);
     }
 
-    $gameRule = Engine\getDescription(DESCRIPTION_KEY);
-    Engine\processGame($gameRule, $questionsAndAnswers);
+    Engine\processGame(DESCRIPTION, $questionsAndAnswers);
 }

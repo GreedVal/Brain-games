@@ -4,56 +4,44 @@ namespace BrainGames\Games\Progression;
 
 use BrainGames\Engine;
 
-const MAX_LONG_PROGRESSION = 9;
-const MIN_LONG_PROGRESSION = 1;
-const MIN_STEP_PROGRESSION = 2;
-const MAX_STEP_PROGRESSION = 9;
-const DESCRIPTION_KEY = 'progression';
+const LONG_PROGRESSION = 10;
+const MIN_POSITION = 1;
+const MAX_POSITION = 10;
+const MIN_STEP = 2;
+const MAX_STEP = 5;
+const GAME_ROUNDS = 3;
+const DESCRIPTION = 'What number is missing in the progression?';
 
 
-function getProgressionNumberAndResult(): array
+function progression(int $step, int $long, int $start): array
 {
-
-    $randomNumberStart = Engine\getRandomNumber();
-
-    $randomPosition = rand(MIN_LONG_PROGRESSION, MAX_LONG_PROGRESSION);
-    $randomStep = rand(MIN_STEP_PROGRESSION, MAX_STEP_PROGRESSION);
-
     $result = [];
-    $progression = [];
-    $correctAnswer = $randomNumberStart;
 
-    for ($i = 1; $i <= MAX_LONG_PROGRESSION; $i++) {
-        $number = $randomNumberStart + $randomStep * $i;
-
+    for ($i = 0; $i <= $long; $i++) {
+        $number = $start + $step * $i;
         $progression[$i] = $number;
-
-        if ($randomPosition == $i) {
-            $correctAnswer = $number;
-        }
     }
-
-    $progression[$randomPosition] = '..';
-
-    $progressionString = implode(' ', $progression);
-
-    $result['question'] = $progressionString;
-    $result['correct'] = $correctAnswer;
 
     return $result;
 }
 
-
 function run(): void
 {
-
-    $gameRoundCount = Engine\getGameRounds();
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < $gameRoundCount; $i++) {
-        $questionsAndAnswers[] = getProgressionNumberAndResult();
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+        $randomPosition = rand(MIN_POSITION, MAX_POSITION);
+        $randomStep = rand(MIN_STEP, MAX_STEP);
+
+        $progression = progression($randomStep, LONG_PROGRESSION, $randomPosition);
+        $correct = $progression[$randomPosition];
+
+        $progression[$randomPosition] = '..';
+        $question = implode(' ', $progression);
+
+        $questionsAndAnswers[$i]['question'] = $question;
+        $questionsAndAnswers[$i]['correct'] = $correct;
     }
 
-    $gameRule = Engine\getDescription(DESCRIPTION_KEY);
-    Engine\processGame($gameRule, $questionsAndAnswers);
+    Engine\processGame(DESCRIPTION, $questionsAndAnswers);
 }
