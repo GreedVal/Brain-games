@@ -26,14 +26,13 @@ function prime(int $number): string
 
 function run(): void
 {
-    $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     $questionsAndAnswers = [];
 
     for ($i = 0; $i < GAME_ROUNDS; $i++) {
-        $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
         $questionsAndAnswers[$i]['question'] = $randomNumber;
-        $questionsAndAnswers[$i]['correct'] = prime($randomNumber1);
+        $questionsAndAnswers[$i]['correct'] = prime($randomNumber);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
