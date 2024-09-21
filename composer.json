@@ -1,6 +1,7 @@
 {
   "name": "hexlet/code",
   "description": "Test project",
+  "version": "1.0.0",
   "type": "library",
   "autoload": {
     "files": [

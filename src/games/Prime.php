@@ -16,14 +16,13 @@ function isPrime(int $number): string
     }
 
     for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i == 0) {
+        if ($number % $i === 0) {
             return 'no';
         }
     }
-    
+
     return 'yes';
 }
-
 
 function run(): void
 {
