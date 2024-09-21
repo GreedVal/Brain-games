@@ -7,7 +7,7 @@ brain-games:
 brain-even:
 	./bin/brain-even
 
-brain-even:
+brain-calc:
 	./bin/brain-calc
 
 brain-progression:
