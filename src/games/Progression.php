@@ -19,7 +19,7 @@ function progression(int $step, int $long, int $start): array
 
     for ($i = 1; $i <= $long; $i++) {
         $number = $start + $step * $i;
-        $progression[$i] = $number;
+        $result[$i] = $number;
     }
 
     return $result;
