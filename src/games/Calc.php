@@ -33,6 +33,12 @@ function getCalc(int $number1, int $number2, string $signs): int
     return $result;
 }
 
+function getRandomSign(array $signs): string
+{
+    $randomSign = $signs[array_rand($signs)];
+    return $randomSign;
+}
+
 
 function run(): void
 {
@@ -41,7 +47,7 @@ function run(): void
     for ($i = 0; $i < GAME_ROUNDS; $i++) {
         $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-        $randomSign = array_rand(OPERATORS);
+        $randomSign = getRandomSign(OPERATORS);
 
         $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
         $questionsAndAnswers[$i]['correct'] = getCalc($randomNumber1, $randomNumber2, $randomSign);
