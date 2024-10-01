@@ -2,6 +2,7 @@
 
 namespace Hexlet\Code\Games\Calc;
 
+use Exception;
 use Hexlet\Code\Engine;
 
 const OPERATORS = ['+', '-', '*'];
@@ -19,8 +20,7 @@ function calculate(int $number1, int $number2, string $signs): int
         case '*':
             return $number1 * $number2;
         default:
-            //todo тут вывод исключения
-            break;
+            throw new Exception('Invalid operator');
     }
 }
 
