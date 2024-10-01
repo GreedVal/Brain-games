@@ -20,10 +20,8 @@ function findGcd(int $number1, int $number2): int
     return $number1;
 }
 
-
 function run(): void
 {
-
     $questionsAndAnswers = [];
 
     for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
