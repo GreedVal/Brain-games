@@ -16,7 +16,6 @@ function generateProgression(int $step, int $long, int $start): array
 {
     $end = $start + $step * ($long - 1);
     return range($start, $end, $step);
-
 }
 
 function run(): void
