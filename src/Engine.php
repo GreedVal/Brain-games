@@ -6,6 +6,9 @@ use function Hexlet\Code\Cli\greetUser;
 use function cli\line;
 use function cli\prompt;
 
+//todo вынести все настройки игры в отдельный файл конфиг, кол-со раундов, сложность игры.
+const GAME_ROUNDS = 3;
+
 function processGame(string $gameRule, array $questionsAndAnswers): void
 {
     $playerName = greetUser();
@@ -26,6 +29,5 @@ function processGame(string $gameRule, array $questionsAndAnswers): void
 
         line("Correct!");
     }
-
     line("Congratulations, %s!", ucfirst($playerName));
 }

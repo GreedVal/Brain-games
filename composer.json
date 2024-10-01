@@ -1,11 +1,8 @@
 {
   "name": "hexlet/code",
   "description": "Test project",
-  "type": "library",
+  "type": "project",
   "autoload": {
-    "psr-4": {
-      "Hexlet\\Code\\": "src/"
-    },
     "files": [
       "src/Cli.php",
       "src/Engine.php",

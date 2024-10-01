@@ -9,38 +9,31 @@ const MIN_POSITION = 1;
 const MAX_POSITION = 10;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
-const GAME_ROUNDS = 3;
 const DESCRIPTION = 'What number is missing in the progression?';
 
 
-function isProgression(int $step, int $long, int $start): array
+function generateProgression(int $step, int $long, int $start): array
 {
-    $result = [];
-
-    for ($i = 1; $i <= $long; $i++) {
-        $number = $start + $step * $i;
-        $result[$i] = $number;
-    }
-
-    return $result;
+    $end = $start + $step * ($long - 1);
+    return range($start, $end, $step);
 }
 
 function run(): void
 {
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+    for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
         $randomPosition = rand(MIN_POSITION, MAX_POSITION);
         $randomStep = rand(MIN_STEP, MAX_STEP);
 
-        $progression = isProgression($randomStep, LONG_PROGRESSION, $randomPosition);
+        $progression = generateProgression($randomStep, LONG_PROGRESSION, $randomPosition);
         $correct = $progression[$randomPosition];
 
         $progression[$randomPosition] = '..';
         $question = implode(' ', $progression);
 
-        $questionsAndAnswers[$i]['question'] = $question;
-        $questionsAndAnswers[$i]['correct'] = $correct;
+        $questionsAndAnswers[]['question'] = $question;
+        $questionsAndAnswers[]['correct'] = $correct;
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

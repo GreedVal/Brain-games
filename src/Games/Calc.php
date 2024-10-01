@@ -6,31 +6,22 @@ use Hexlet\Code\Engine;
 
 const OPERATORS = ['+', '-', '*'];
 const DESCRIPTION = 'What is the result of the expression?';
-const GAME_ROUNDS = 3;
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-function isCalc(int $number1, int $number2, string $signs): int
+function calculate(int $number1, int $number2, string $signs): int
 {
-
-    $result = 0;
-
     switch ($signs) {
         case '+':
-            $result = $number1 + $number2;
-            break;
+            return $number1 + $number2;
         case '-':
-            $result = $number1 - $number2;
-            break;
+            return $number1 - $number2;
         case '*':
-            $result = $number1 * $number2;
-            break;
+            return $number1 * $number2;
         default:
-            $result = 0;
+            //todo тут вывод исключения
             break;
     }
-
-    return $result;
 }
 
 function getRandomSign(array $signs): string
@@ -44,13 +35,13 @@ function run(): void
 {
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+    for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
         $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomSign = getRandomSign(OPERATORS);
 
-        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-        $questionsAndAnswers[$i]['correct'] = isCalc($randomNumber1, $randomNumber2, $randomSign);
+        $questionsAndAnswers[]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
+        $questionsAndAnswers[]['correct'] = calculate($randomNumber1, $randomNumber2, $randomSign);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
