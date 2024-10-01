@@ -26,7 +26,7 @@ function generateQuestionAndAnswer(): array
 
     $progression = generateProgression($randomStep, LONG_PROGRESSION, $randomPosition);
 
-    $correct = $progression[$randomPosition];
+    $correct = (string) $progression[$randomPosition];
     $progression[$randomPosition] = '..';
     $question = implode(' ', $progression);
 
