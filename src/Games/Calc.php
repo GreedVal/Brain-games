@@ -20,7 +20,7 @@ function calculate(int $number1, int $number2, string $signs): int
         case '*':
             return $number1 * $number2;
         default:
-            return 0;
+            throw new Exception('Invalid operator');
     }
 }
 
