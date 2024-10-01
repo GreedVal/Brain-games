@@ -8,8 +8,6 @@ const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
 
-
-
 function isEven(int $number): bool
 {
     return $number % 2 === 0;
