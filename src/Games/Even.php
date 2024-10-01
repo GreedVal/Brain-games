@@ -12,7 +12,7 @@ const MAX_RANDOM_NUMBER = 100;
 
 function isEven(int $number): bool
 {
-    return $number % 2 === 0 ? true : false;
+    return $number % 2 === 0;
 }
 
 function run(): void

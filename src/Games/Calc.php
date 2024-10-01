@@ -20,6 +20,7 @@ function calculate(int $number1, int $number2, string $signs): int
         case '*':
             return $number1 * $number2;
         default:
+            //todo добавить оброботку exeption при вызове метода
             throw new Exception('Invalid operator');
     }
 }

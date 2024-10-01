@@ -11,7 +11,7 @@ const MAX_RANDOM_NUMBER = 100;
 function isPrime(int $number): bool
 {
     if ($number < 2) {
-        return true;
+        return false;
     }
 
     for ($i = 2; $i <= sqrt($number); $i++) {
