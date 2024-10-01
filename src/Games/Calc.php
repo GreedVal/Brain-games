@@ -9,7 +9,7 @@ const OPERATORS = ['+', '-', '*'];
 const DESCRIPTION = 'What is the result of the expression?';
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
-
+const GAME_ROUNDS = 3;
 function calculate(int $number1, int $number2, string $signs): int
 {
     switch ($signs) {
@@ -35,7 +35,7 @@ function run(): void
 {
     $questionsAndAnswers = [];
 
-    for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
+    for ($i = 1; $i <= GAME_ROUNDS; $i++) {
         $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomSign = getRandomSign(OPERATORS);
