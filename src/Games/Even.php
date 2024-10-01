@@ -15,16 +15,20 @@ function isEven(int $number): bool
     return $number % 2 === 0;
 }
 
+function generateQuestionAndAnswer(): array
+{
+    $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $correct = isEven($randomNumber) ? 'yes' : 'no';
+
+    return ['question' => $randomNumber, 'correct' => $correct];
+}
+
 function run(): void
 {
     $questionsAndAnswers = [];
 
     for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
-        $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-
-        $correct = isEven($randomNumber) ? 'yes' : 'no';
-        $questionsAndAnswers[$i]['question'] = $randomNumber;
-        $questionsAndAnswers[$i]['correct'] = $correct;
+        $questionsAndAnswers[] = generateQuestionAndAnswer();
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
