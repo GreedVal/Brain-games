@@ -30,18 +30,27 @@ function getRandomSign(array $signs): string
     return $signs[array_rand($signs)];
 }
 
+function generateQuestionAndAnswer(): array
+{
+    $result = [];
+
+    $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $randomSign = getRandomSign(OPERATORS);
+
+    $correct = (string) calculate($randomNumber1, $randomNumber2, $randomSign);
+    $question = "{$randomNumber1} {$randomSign} {$randomNumber2}";
+    $result = ['question' => $question, 'correct' => $correct];
+
+    return $result;
+}
 
 function run(): void
 {
     $questionsAndAnswers = [];
 
     for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
-        $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-        $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-        $randomSign = getRandomSign(OPERATORS);
-
-        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-        $questionsAndAnswers[$i]['correct'] = (string) calculate($randomNumber1, $randomNumber2, $randomSign);
+        $questionsAndAnswers[] = generateQuestionAndAnswer();
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

@@ -18,22 +18,29 @@ function generateProgression(int $step, int $long, int $start): array
     return range($start, $end, $step);
 }
 
+function generateQuestionAndAnswer(): array
+{
+    $result = [];
+    $randomPosition = rand(MIN_POSITION, MAX_POSITION);
+    $randomStep = rand(MIN_STEP, MAX_STEP);
+
+    $progression = generateProgression($randomStep, LONG_PROGRESSION, $randomPosition);
+
+    $correct = $progression[$randomPosition];
+    $progression[$randomPosition] = '..';
+    $question = implode(' ', $progression);
+
+    $result = ['question' => $question, 'correct' => $correct];
+
+    return $result;
+}
+
 function run(): void
 {
     $questionsAndAnswers = [];
 
     for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
-        $randomPosition = rand(MIN_POSITION, MAX_POSITION);
-        $randomStep = rand(MIN_STEP, MAX_STEP);
-
-        $progression = generateProgression($randomStep, LONG_PROGRESSION, $randomPosition);
-        $correct = $progression[$randomPosition];
-
-        $progression[$randomPosition] = '..';
-        $question = implode(' ', $progression);
-
-        $questionsAndAnswers[$i]['question'] = $question;
-        $questionsAndAnswers[$i]['correct'] = (string) $correct;
+        $questionsAndAnswers[] = generateQuestionAndAnswer();
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
