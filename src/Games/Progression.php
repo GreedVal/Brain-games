@@ -33,7 +33,7 @@ function run(): void
         $question = implode(' ', $progression);
 
         $questionsAndAnswers[$i]['question'] = $question;
-        $questionsAndAnswers[$i]['correct'] = $correct;
+        $questionsAndAnswers[$i]['correct'] = (string) $correct;
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

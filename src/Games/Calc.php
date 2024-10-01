@@ -20,14 +20,13 @@ function calculate(int $number1, int $number2, string $signs): int
         case '*':
             return $number1 * $number2;
         default:
-            break;
+            throw new Exception('Invalid operator');
     }
 }
 
 function getRandomSign(array $signs): string
 {
-    $randomSign = $signs[array_rand($signs)];
-    return $randomSign;
+    return $signs[array_rand($signs)];
 }
 
 
@@ -41,7 +40,7 @@ function run(): void
         $randomSign = getRandomSign(OPERATORS);
 
         $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-        $questionsAndAnswers[$i]['correct'] = calculate($randomNumber1, $randomNumber2, $randomSign);
+        $questionsAndAnswers[$i]['correct'] = (string) calculate($randomNumber1, $randomNumber2, $randomSign);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

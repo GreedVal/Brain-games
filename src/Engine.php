@@ -15,7 +15,7 @@ function processGame(string $gameRule, array $questionsAndAnswers): void
 
     foreach ($questionsAndAnswers as $qa) {
         $question = $qa['question'];
-        $correctAnswer = (string) $qa['correct'];
+        $correctAnswer = $qa['correct'];
 
         line("Question: %s", $question);
         $answer = prompt("Your answer is ");
