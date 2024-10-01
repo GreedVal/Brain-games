@@ -40,8 +40,8 @@ function run(): void
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomSign = getRandomSign(OPERATORS);
 
-        $questionsAndAnswers[]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
-        $questionsAndAnswers[]['correct'] = calculate($randomNumber1, $randomNumber2, $randomSign);
+        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomSign} {$randomNumber2}";
+        $questionsAndAnswers[$i]['correct'] = calculate($randomNumber1, $randomNumber2, $randomSign);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

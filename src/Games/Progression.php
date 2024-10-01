@@ -32,8 +32,8 @@ function run(): void
         $progression[$randomPosition] = '..';
         $question = implode(' ', $progression);
 
-        $questionsAndAnswers[]['question'] = $question;
-        $questionsAndAnswers[]['correct'] = $correct;
+        $questionsAndAnswers[$i]['question'] = $question;
+        $questionsAndAnswers[$i]['correct'] = $correct;
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

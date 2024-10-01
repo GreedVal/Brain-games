@@ -30,8 +30,8 @@ function run(): void
         $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
-        $questionsAndAnswers[]['question'] = "{$randomNumber1} {$randomNumber2}";
-        $questionsAndAnswers[]['correct'] = findGcd($randomNumber1, $randomNumber2);
+        $questionsAndAnswers[$i]['question'] = "{$randomNumber1} {$randomNumber2}";
+        $questionsAndAnswers[$i]['correct'] = findGcd($randomNumber1, $randomNumber2);
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);

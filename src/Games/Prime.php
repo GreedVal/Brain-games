@@ -31,8 +31,8 @@ function run(): void
         $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
         $correct = isPrime($randomNumber) ? 'yes' : 'no';
-        $questionsAndAnswers[]['question'] = $randomNumber;
-        $questionsAndAnswers[]['correct'] = $correct;
+        $questionsAndAnswers[$i]['question'] = $randomNumber;
+        $questionsAndAnswers[$i]['correct'] = $correct;
     }
 
     Engine\processGame(DESCRIPTION, $questionsAndAnswers);
