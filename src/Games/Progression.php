@@ -10,7 +10,7 @@ const MAX_POSITION = 9;
 const MIN_STEP = 2;
 const MAX_STEP = 5;
 const DESCRIPTION = 'What number is missing in the progression?';
-const GAME_ROUNDS = 3;
+
 
 function generateProgression(int $step, int $long, int $start): array
 {
@@ -22,7 +22,7 @@ function run(): void
 {
     $questionsAndAnswers = [];
 
-    for ($i = 1; $i <= GAME_ROUNDS; $i++) {
+    for ($i = 1; $i <= Engine\GAME_ROUNDS; $i++) {
         $randomPosition = rand(MIN_POSITION, MAX_POSITION);
         $randomStep = rand(MIN_STEP, MAX_STEP);
 
