@@ -17,10 +17,11 @@ function isEven(int $number): bool
 
 function generateQuestionAndAnswer(): array
 {
+    $result = [];
     $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     $correct = isEven($randomNumber) ? 'yes' : 'no';
-
-    return ['question' => $randomNumber, 'correct' => $correct];
+    $result = ['question' => $randomNumber, 'correct' => $correct];
+    return $result;
 }
 
 function run(): void
