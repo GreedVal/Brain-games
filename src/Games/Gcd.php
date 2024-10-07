@@ -22,8 +22,6 @@ function findGcd(int $number1, int $number2): int
 
 function generateQuestionAndAnswer(): array
 {
-    $result = [];
-
     $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 

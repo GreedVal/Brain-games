@@ -32,8 +32,6 @@ function getRandomSign(array $signs): string
 
 function generateQuestionAndAnswer(): array
 {
-    $result = [];
-
     $randomNumber1 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     $randomNumber2 = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     $randomSign = getRandomSign(OPERATORS);

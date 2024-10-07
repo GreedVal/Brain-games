@@ -4,7 +4,7 @@ namespace Hexlet\Code\Games\Progression;
 
 use Hexlet\Code\Engine;
 
-const LONG_PROGRESSION = 10;
+const PROGRESSION_LENGTH = 10;
 const MIN_POSITION = 0;
 const MAX_POSITION = 9;
 const MIN_STEP = 2;
@@ -20,11 +20,10 @@ function generateProgression(int $step, int $long, int $start): array
 
 function generateQuestionAndAnswer(): array
 {
-    $result = [];
     $randomPosition = rand(MIN_POSITION, MAX_POSITION);
     $randomStep = rand(MIN_STEP, MAX_STEP);
 
-    $progression = generateProgression($randomStep, LONG_PROGRESSION, $randomPosition);
+    $progression = generateProgression($randomStep, PROGRESSION_LENGTH, $randomPosition);
 
     $correct = (string) $progression[$randomPosition];
     $progression[$randomPosition] = '..';
